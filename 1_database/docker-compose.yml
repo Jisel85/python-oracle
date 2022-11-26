@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  oracle-server:
+    image: gvenzl/oracle-xe:21-slim-faststart
+    ports:
+      - 1521:1521
+    environment:
+      - ORACLE_DATABASE=ucentral
+      - APP_USER=jisel
+      - APP_USER_PASSWORD=12341234
+      - ORACLE_PASSWORD=12341234
+    volumes:
+      - oracle-data:/opt/oracle/oradata 
+
+volumes:
+  oracle-data:
